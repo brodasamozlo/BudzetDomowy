@@ -1,0 +1,64 @@
+
+ <div class="section">
+
+	<div id="newsHeader">
+		<div class="newsTitle">Startujemy</div>
+	    <div class="newsDate">2013-01-08</div>
+	</div>
+
+
+   	<p>Celem niniejszego projektu jest stworzenie prostej platformy pozwalającej monitorować przychody i wydatki w domowym budżecie.<br>
+   	Przy okazji... lepiej poznamy narzędzia(patrz niżej), PHP, Framework Zend 2.0, HTML i CSS.<br>
+   	Ponieważ będzie to trochę większy projekt, jako szkieletu aplikacji użyjemy Zend Framework 2.0 - PHP 5.1.<br>
+    Baza danych:  MySql.<br>
+    Narzędzia: XAMPP + Eclipse + MySQL Workbench.</p>
+    <br>
+    <p>Zakładana funkcjonalność</p> 
+  	<ol>
+       <li>Dodawanie/edycja wydatków, przychodów, oszczędności - użytkownik będzie miał możliwość zdefiniowania własnych grup/kategorii/rodzaju(cykliczny, jednorazowy)
+	            dla każdej z tych grup
+       </li>
+        <li>Konta bankowe - dodanie kont z możliwością importu danych z konta</li>
+        <li>Kalendarz - łatwy sposób na podgląd wydatków/przychodów - dodatkowo z poziomu kalendarza będzie możliwość dodawania/edycji tych danych -
+            do zastanowienia czy nie zrobić kalendarza jako głównego interfejsu do wprowadzania danych
+        </li>
+        <li>Dodanie wizualizacji wprowadzonych danych - wykresy w ujęciu miesięcznym/rocznym z wydatkami i przychodami</li>
+     </ol>
+</div>
+
+ <div class="section">
+	<div id="newsHeader">
+		<div class="newsTitle">TODO</div>
+    	<div class="newsDate">2013-01-08</div>
+	</div>
+
+ 	<p>Czyli plan działania... bo nie ma to jak dobry plan...</p>
+	<ol>
+		<li>Zaprojektować bazę danych</li>
+        <li>Rejestracja z potwierdzeniem adresu email, logowanie(autentykacja i autoryzacja), zarządzanie użytkownikami/rolami</li>
+        <li>Zrobić interfejs do zarządzania/wyświetlania wpisów</li>
+        <li>Dodać możliwość wprowadzania/edycji danych - Dodanie modeli, widoków i kontrolerów do wszystkich pozostałych tablic</li>
+        <li>Sedno - statystyki, wykresy, prognozy - znaczy sie miodek :D</li>
+        <li>Zrobić formularz kontaktowy</li>
+	</ol>
+	
+	<p>Ta lista będzie się zmieniać, wraz z pojawianiem się nowych pomysłów.</p>
+</div>
+
+
+<div class="section">
+	<div id="newsHeader">
+		<div class="newsTitle">Baza danych</div>
+    	<div class="newsDate">2013-01-08</div>
+	</div>
+	
+ 	<p>Udało się stworzyć <a href="../images/schemat_bazy.png"  target="_blank" >projekt bazy danych</a> odpowiedzialnej za przechowywanie naszych danych. Dokładniejszy opis znajduje się w <a href="../images/schema_bd.mwb">MySQL Workbench EER Model</a><br>
+ 	   Baza raczej prosta, więc wyjaśnię tylko główne założenia. Każdy użytkownik sam sobie definiuje swoje 'słowniki' wydatków i przychdów.<br>
+ 	   Do tego są tablice <a>'*_type'</a>, pola w tych tablicach <a>'category'</a> i <a>'subcategory'</a> posłużą nam do grupowania wydatków/przychodów/oszczędności.<br>
+ 	   Tablice <a>'*_periods'</a> będą określały czy dany wydatek/przychód/oszczędność jest jednorazowa czy cykliczna.<br>
+ 	   Tablice <a>'default_*'</a> są po to żeby w momencie rejestracji użytkownikowi zainicjować jego słowniki, tak aby nie musiał zaczynać od zera.<br>
+ 	   Tablica <a>'roles'</a> - rola danego użytkownika, Admin, Urzytkownik - na podstawie roli będziemy decydować do czego dany użytkownik ma dostęp.<br>
+ 	   Tablica <a>'families'</a> - dzięki niej będziemy mogli grupować użytkowników w rodziny/gospodarstwa domowe.
+ 	</p>
+	
+</div>
